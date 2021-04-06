@@ -23,7 +23,6 @@ class _ProductViewState extends BaseView {
     productViewModel.searchProduct('');
 
     searchController.addListener(() {
-      log(searchController.text);
       productViewModel.searchProduct(searchController.text);
     });
   }

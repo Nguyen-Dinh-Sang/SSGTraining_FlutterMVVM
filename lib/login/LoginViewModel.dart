@@ -20,10 +20,10 @@ class LoginViewModel {
       }
   );
 
-  Stream<String> get emailStream => _emailSubject.stream.transform(emailValidation);
+  Stream<String> get emailStream => _emailSubject.stream.transform(emailValidation).skip(1);
   Sink<String> get emailSink => _emailSubject.sink;
 
-  Stream<String> get passStream => _passSubject.stream.transform(passValidation);
+  Stream<String> get passStream => _passSubject.stream.transform(passValidation).skip(1);
   Sink<String> get passSink => _passSubject.sink;
 
   Stream<bool> get btnStream => _btnSubject.stream;
