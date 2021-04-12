@@ -89,23 +89,27 @@ class _BodyWidgetState extends State<BodyWidget> {
             height: 45,
             width: 200,
             child: StreamBuilder<bool>(
-              stream: loginViewModel.btnStream,
-              builder: (context, snapshot) {
-                return RaisedButton(
-                  color: Colors.blue,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  onPressed: snapshot.data == true ? () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => ProductView()));
-                  } : null,
-                  child: Text(
-                    'Login',
-                    style: TextStyle(color: Colors.white, fontSize: 17),
-                  ),
-                );
-              }
-            ),
+                stream: loginViewModel.btnStream,
+                builder: (context, snapshot) {
+                  return RaisedButton(
+                    color: Colors.blue,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    onPressed: snapshot.data == true
+                        ? () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ProductView()));
+                          }
+                        : null,
+                    child: Text(
+                      'Login',
+                      style: TextStyle(color: Colors.white, fontSize: 17),
+                    ),
+                  );
+                }),
           ),
         ],
       ),
